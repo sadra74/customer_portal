@@ -51,6 +51,14 @@ export const TemplateDiv = styled.div<TemplateParams>`
   z-index: ${(props: TemplateParams) => props.zIndex ? props.zIndex : 'auto'};
   `;
 
+export const ContainerDiv = styled.div`
+  border: ${(props: ContainerParams) => props.border ? props.border : 'none'};
+  margin: ${(props: ContainerParams) => props.margin ? props.margin : '0px'};
+  padding: ${(props: ContainerParams) => props.padding ? props.padding : '0px'};
+  min-width: ${(props: ContainerParams) => props.minWidth ? props.minWidth : '0px'};
+  background-color: ${(props: ContainerParams) => props.backgroundColor ? props.backgroundColor : 'unset'};
+`;
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 export const TextSpan = styled.div`
@@ -80,10 +88,4 @@ export const CardDiv = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const ContainerDiv = styled.div`
-  border: ${(props: ContainerParams) => props.border ? props.border : 'none'};
-  margin: ${(props: ContainerParams) => props.margin ? props.margin : '0px'};
-  padding: ${(props: ContainerParams) => props.padding ? props.padding : '0px'};
-  min-width: ${(props: ContainerParams) => props.minWidth ? props.minWidth : '0px'};
-  background-color: ${(props: ContainerParams) => props.backgroundColor ? props.backgroundColor : 'unset'};
-`;
+

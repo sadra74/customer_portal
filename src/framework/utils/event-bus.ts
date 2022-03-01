@@ -10,14 +10,11 @@ interface MapperElement {
 export class EventBus {
     private static mapper: Mapper = {};
 
-    public static set(key: number, value: any, removeValueAfterSet = true, clearValueStackBeforeSet = false) {
+    public static set(key: number, value: any, removeValueAfterSet = true) {
         const mainKey = EventBus.buildMainKey(key);
         if (!this.getMapperElement(mainKey)) {
             this.initializeMapperWithDefaultValue(mainKey, value);
         } else {
-            if (clearValueStackBeforeSet) {
-                this.clearValueStack(mainKey);
-            }
             this.addValue(mainKey, value);
             if (this.isValueStackFilled(mainKey)) {
                 this.callEveryHandler(mainKey);
@@ -28,12 +25,9 @@ export class EventBus {
         }
     }
 
-    public static get(key: number, handler: (value: any) => void, removeValueAfterGet = true, clearHandlerStackBeforeGet = false) {
+    public static get(key: number, handler: (value: any) => void, removeValueAfterGet = true) {
         const mainKey = EventBus.buildMainKey(key);
         if (this.getMapperElement(mainKey)) {
-            if (clearHandlerStackBeforeGet) {
-                this.clearHandlerStack(mainKey);
-            }
             this.addHandler(mainKey, handler);
             if (this.isValueStackFilled(mainKey)) {
                 this.callHandler(handler, mainKey);
@@ -46,13 +40,18 @@ export class EventBus {
         }
     }
 
+    public static clearValueStack(mainKey: string) {
+        this.getMapperElement(mainKey).valueStack = [];
+    }
+
+    public static clearHandlerStack(mainKey: string) {
+        this.getMapperElement(mainKey).handlerStack = [];
+    }
+
 //----------------private methods----------------
 //----------------private methods----------------
 //----------------private methods----------------
 
-    private static clearValueStack(mainKey: string) {
-        this.getMapperElement(mainKey).valueStack = [];
-    }
 
     private static callHandler(handler: (value: any) => void, mainKey: string) {
         handler(this.getLastMapperElement(mainKey));
@@ -98,7 +97,5 @@ export class EventBus {
         this.getMapperElement(mainKey).handlerStack.map(h => h(this.getLastMapperElement(mainKey)));
     }
 
-    private static clearHandlerStack(mainKey: string) {
-        this.getMapperElement(mainKey).handlerStack = [];
-    }
+
 }

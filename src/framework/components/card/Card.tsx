@@ -5,9 +5,9 @@ import {Horizontal} from "../structural_components/Horizontal";
 import {Template} from "../structural_components/Template";
 import {Empty} from "../structural_components/Empty";
 
-export interface CardParams {
+export class CardParams {
     color?: string;
-    onClick?: () => void;
+    onClick?: any;
     borderRadius?: string;
     width?: string;
     height?: string;
@@ -16,6 +16,7 @@ export interface CardParams {
     border?: string;
     children?: any;
     icon?: any;
+    cursor?: string;
 };
 
 
@@ -25,7 +26,7 @@ export function Card(props: CardParams) {
     }
 
     return (
-        <CardDiv {...props}>
+        <CardDiv {...props} onClick={props.onClick}>
             <Container isContained={true}>
                 <Horizontal>
                     <Empty flex={1}/>

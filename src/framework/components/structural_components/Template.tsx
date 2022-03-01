@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../assets/framework.css';
 import {TemplateDiv} from "../../assets/styled-components";
-export interface TemplateParams {
+export class TemplateParams {
     children?: React.ReactNode;
     justifyContent?: string;
     alignItems?: string;

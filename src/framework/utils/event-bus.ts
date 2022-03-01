@@ -10,7 +10,7 @@ interface MapperElement {
 export class EventBus {
     private static mapper: Mapper = {};
 
-    public static set(key: number, value: any, removeValueAfterSet = true) {
+    public static set(key: number, value: any, removeValueFromValueStackAfterSet = true) {
         const mainKey = EventBus.buildMainKey(key);
         if (!this.getMapperElement(mainKey)) {
             this.initializeMapperWithDefaultValue(mainKey, value);
@@ -18,20 +18,20 @@ export class EventBus {
             this.addValue(mainKey, value);
             if (this.isValueStackFilled(mainKey)) {
                 this.callEveryHandler(mainKey);
-                if (removeValueAfterSet) {
+                if (removeValueFromValueStackAfterSet) {
                     this.popLastElement(mainKey);
                 }
             }
         }
     }
 
-    public static get(key: number, handler: (value: any) => void, removeValueAfterGet = true) {
+    public static get(key: number, handler: (value: any) => void, removeValueFromValueStackAfterSet = true) {
         const mainKey = EventBus.buildMainKey(key);
         if (this.getMapperElement(mainKey)) {
             this.addHandler(mainKey, handler);
             if (this.isValueStackFilled(mainKey)) {
                 this.callHandler(handler, mainKey);
-                if (removeValueAfterGet) {
+                if (removeValueFromValueStackAfterSet) {
                     this.popLastElement(mainKey);
                 }
             }

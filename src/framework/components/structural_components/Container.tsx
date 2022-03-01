@@ -11,6 +11,7 @@ export interface ContainerParams {
     border?: string;
     minWidth?: string;
     overflow?: string;
+    backgroundColor?: string;
 
 }
 

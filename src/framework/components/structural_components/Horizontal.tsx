@@ -2,8 +2,9 @@ import React from 'react';
 import '../../assets/framework.css';
 import {DirectedStructure, FlexDivParams} from "./DirectedStructure";
 
-export function Horizontal(props: FlexDivParams) {
+export const Horizontal =React.forwardRef((props: FlexDivParams, ref: React.Ref<HTMLDivElement>) => {
     return (
-        <DirectedStructure {...props} direction="horizontal" />
+        <DirectedStructure ref={ref} {...props} direction="horizontal" />
     );
-}
+})
+

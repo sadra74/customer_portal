@@ -18,7 +18,11 @@ export const FlexItemDiv = styled.div<FlexDivParams>`
   overflow-x: ${(props: FlexDivParams) => props.overflowX ? props.overflowX : 'hidden'};
   overflow-y: ${(props: FlexDivParams) => props.overflowY ? props.overflowY : 'hidden'};
   min-width: ${(props: FlexDivParams) => props.minWidth ? props.minWidth : '0px'};
-  max-width: ${(props: ComponentParams) => props.maxWidth ? props.maxWidth : 'unset'};
+  max-width: ${(props: FlexDivParams) => props.maxWidth ? props.maxWidth : 'unset'};
+  min-height: ${(props: ComponentParams) => props.minHeight ? props.minHeight : '0px'};
+  max-height: ${(props: ComponentParams) => props.maxHeight ? props.maxHeight : 'unset'};
+
+
 `;
 export const ComponentDiv = styled.div<ComponentParams>`
   position: ${(props: ComponentParams) => props.position};
@@ -31,6 +35,7 @@ export const ComponentDiv = styled.div<ComponentParams>`
   max-width: ${(props: ComponentParams) => props.maxWidth ? props.maxWidth : 'unset'};
   width: ${(props: ComponentParams) => props.width ? props.width : 'unset'};
   min-height: ${(props: ComponentParams) => props.minHeight ? props.minHeight : '0px'};
+  max-height: ${(props: ComponentParams) => props.maxHeight ? props.maxHeight : 'unset'};
 `;
 export const TemplateDiv = styled.div<TemplateParams>`
   position: ${(props: TemplateParams) => props.position};
@@ -64,6 +69,7 @@ export const EmptyDiv = styled.div`
 `;
 export const CardDiv = styled.div`
   color: ${(props: CardParams) => props.color};
+  cursor: ${(props: CardParams) => props.cursor ? props.cursor : 'pointer'};
   border: ${(props: CardParams) => props.border};
   border-radius: ${(props: CardParams) => props.borderRadius};
   width: ${(props: CardParams) => props.width};
@@ -79,4 +85,5 @@ export const ContainerDiv = styled.div`
   margin: ${(props: ContainerParams) => props.margin ? props.margin : '0px'};
   padding: ${(props: ContainerParams) => props.padding ? props.padding : '0px'};
   min-width: ${(props: ContainerParams) => props.minWidth ? props.minWidth : '0px'};
+  background-color: ${(props: ContainerParams) => props.backgroundColor ? props.backgroundColor : 'unset'};
 `;

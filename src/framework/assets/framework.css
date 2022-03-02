@@ -21,19 +21,18 @@
     background: #969696;
     border-radius: 10px;
 }
-
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #3200ff;
     border-radius: 10px;
 
 }
-
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #130059;
 }
+
+
 
 .vertical{
     display: flex;

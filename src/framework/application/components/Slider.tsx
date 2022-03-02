@@ -1,9 +1,9 @@
 import React, {useRef} from "react";
-import {Container} from "../../framework/components/structural_components/Container";
-import {Vertical} from "../../framework/components/structural_components/Vertical";
-import {Component} from "../../framework/components/structural_components/Component";
+import {Container} from "../../components/structural_components/Container";
+import {Vertical} from "../../components/structural_components/Vertical";
+import {Component} from "../../components/structural_components/Component";
 import {ScrollButton} from "./ScrollButton";
-import {Horizontal} from "../../framework/components/structural_components/Horizontal";
+import {Horizontal} from "../../components/structural_components/Horizontal";
 import {ImageCard} from "./ImageCard";
 
 export function Slider() {

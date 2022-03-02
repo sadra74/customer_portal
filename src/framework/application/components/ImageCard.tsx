@@ -1,13 +1,13 @@
 import React from "react";
-import {Container} from "../../framework/components/structural_components/Container";
-import {Vertical} from "../../framework/components/structural_components/Vertical";
-import {Component} from "../../framework/components/structural_components/Component";
-import {Template} from "../../framework/components/structural_components/Template";
+import {Container} from "../../components/structural_components/Container";
+import {Vertical} from "../../components/structural_components/Vertical";
+import {Component} from "../../components/structural_components/Component";
+import {Template} from "../../components/structural_components/Template";
 import {Image} from "antd";
-import {Text} from "../../framework/components/text/Text";
-import {Horizontal} from "../../framework/components/structural_components/Horizontal";
+import {Text} from "../../components/text/Text";
+import {Horizontal} from "../../components/structural_components/Horizontal";
 import {StarFilled} from "@ant-design/icons";
-import {Card} from "../../framework/components/card/Card";
+import {Card} from "../../components/card/Card";
 
 export function ImageCard() {
     return (

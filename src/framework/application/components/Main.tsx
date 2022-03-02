@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, Form, Rate} from "antd";
-import {BaseDVForm} from "../../framework/components/form/BaseDVForm";
+import {BaseDVForm} from "../../components/form/BaseDVForm";
 
 export class Main extends BaseDVForm {
     options = ['Apple', 'Orange', 'Banana']

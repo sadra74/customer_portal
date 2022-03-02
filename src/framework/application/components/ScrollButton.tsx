@@ -1,12 +1,12 @@
 
 import React from "react";
-import {Container} from "../../framework/components/structural_components/Container";
-import {Vertical} from "../../framework/components/structural_components/Vertical";
-import {Horizontal} from "../../framework/components/structural_components/Horizontal";
-import {Template} from "../../framework/components/structural_components/Template";
-import {Card} from "../../framework/components/card/Card";
+import {Container} from "../../components/structural_components/Container";
+import {Vertical} from "../../components/structural_components/Vertical";
+import {Horizontal} from "../../components/structural_components/Horizontal";
+import {Template} from "../../components/structural_components/Template";
+import {Card} from "../../components/card/Card";
 import {LeftOutlined, RightOutlined} from "@ant-design/icons";
-import {EventBus} from "../../framework/utils/event-bus";
+import {EventBus} from "../../utils/event-bus";
 
 
 export function ScrollButton(props: {rightButtonClicked: Function, leftButtonClicked: Function}) {

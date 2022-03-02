@@ -1,6 +1,6 @@
 import React from "react";
-import {Card} from "../../framework/components/card/Card";
-import {Template} from "../../framework/components/structural_components/Template";
+import {Card} from "../../components/card/Card";
+import {Template} from "../../components/structural_components/Template";
 import {StarOutlined} from "@ant-design/icons";
 
 
